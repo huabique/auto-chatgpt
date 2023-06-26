@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:prod}
+  task:
+    scheduling:
+      pool:
+        size: 5
+server:
+  port: 8080
+openai:
+  model: ${OPENAI_MODEL:gpt-3.5-turbo}
+  apiKey: ${OPENAI_API_KEY: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}
+zsxq:
+  cookie: ${ZSXQ_COOKIE:zsxqsessionid=b08b85518b499d5111c061536111a9ca; zsxq_access_token=672B932B-06B2-0DCE-6BBF-0C581916D0CC_0EDEE1FDA9B37B8F; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%22582128481112444%22%2C%22first_id%22%3A%221886a76db6312ca-0b218050e89cc28-1d525634-1484784-1886a76db64940%22%2C%22props%22%3A%7B%7D%2C%22identities%22%3A%22eyIkaWRlbnRpdHlfY29va2llX2lkIjoiMTg4NmE3NmRiNjMxMmNhLTBiMjE4MDUwZTg5Y2MyOC0xZDUyNTYzNC0xNDg0Nzg0LTE4ODZhNzZkYjY0OTQwIiwiJGlkZW50aXR5X2xvZ2luX2lkIjoiNTgyMTI4NDgxMTEyNDQ0In0%3D%22%2C%22history_login_id%22%3A%7B%22name%22%3A%22%24identity_login_id%22%2C%22value%22%3A%22582128481112444%22%7D%2C%22%24device_id%22%3A%221886a76db6312ca-0b218050e89cc28-1d525634-1484784-1886a76db64940%22%7D; abtest_env=product}
+  groupId: ${ZSXQ_GROUP_ID:15552521882142}
+  silenced: ${ZSXQ_SILENCED :true}
+scheduler:
+  list:
+    - name: chatbotTask
+      platform: zsxq
+      answer: openai
+      cron: '0/30 * * * * ?'
+#    - name: demoTask
+#      platform: demo
+#      answer: demo
+#      cron: '0/10 * * * * ?'

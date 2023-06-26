@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "scheduler",
+      "type": "com.hehan.ai.chatbot.scheduler.ChatBotScheduler",
+      "sourceType": "com.hehan.ai.chatbot.scheduler.ChatBotScheduler"
+    }
+  ],
+  "properties": [
+    {
+      "name": "scheduler.list",
+      "type": "java.util.List<com.hehan.ai.chatbot.scheduler.SchedulerItem>",
+      "sourceType": "com.hehan.ai.chatbot.scheduler.ChatBotScheduler"
+    }
+  ],
+  "hints": []
+}
